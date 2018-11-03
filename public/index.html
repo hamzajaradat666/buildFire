@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="loginApp">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Login</title>
+
+
+
+    <!-- Compiled and minified Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+
+    <!-- Angular 1.x -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+
+
+</head>
+
+<body>
+
+    <div class="container-fluid" ng-controller="loginCtrl">
+        <div class="container">
+            <!-- added a title -->
+            <h1>Welcome To AppName</h1>
+            <div class="panel panel-default" ng-hide="user">
+                <div class="panel-heading">Login</div>
+                <div class="panel-body">
+                    <div ng-show="errorMessage" class="alert alert-danger">
+                        {{errorMessage}}
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email address</label>
+                        <input type="email" class="form-control" id="email" ng-model="email" placeholder="name@domain.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" ng-model="password" placeholder="Password">
+                    </div>
+                    <button type="submit" class="btn btn-success" ng-click="login()">Login</button>
+                </div>
+            </div>
+        </div>
+        <div class="container" ng-show="user">
+            <!-- More Tidy UI-->
+            <div class="row">
+                <div class="col-sm-12"><img class="img-thumbnail img-responsive" width="20%" src="{{user.profilePic}}"></div>
+                <div class="col-sm-3 center">
+                    <h2>Welcome<br>{{user.name}}</h2>
+                </div>
+                <div class="col-sm-2">
+                    <button class="btn btn-primary" ng-hide="newPasswordMode">Change
+                        User Name</button>
+                    <button class="btn btn-info" ng-click="newPasswordMode = true" ng-hide="newPasswordMode">Change
+                        Password</button>
+                    </div>
+                    <!-- Added old,confirm fields and cancel button -->
+                    <div class="col-sm-2" ng-show="newPasswordMode">
+                        <label for="oldPassword">Old Password</label>
+                        <input class="form-control" type="password" id="oldPassword" ng-model="oldPassword">
+                        <label for="newPassword">New Password</label>
+                        <input class="form-control" type="password" id="newPassword" ng-model="newPassword">
+                        <label for="conPassword">Confirm Password</label>
+                        <input class="form-control" type="password" id="conPassword" ng-model="conPassword">
+                        <button class="btn btn-warning">Change</button>
+                        <button class="btn btn-dark" ng-click="newPasswordMode = false">Cancel</button>
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+    <script src="js/app.js"></script>
+    <script type="module" src="js/loginCtrl.js"></script>
+</body>
+
+</html>

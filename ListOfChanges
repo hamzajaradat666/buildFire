@@ -1,0 +1,16 @@
+1:  in server.js "
+
+                changed the alert messages to more polite sentenses -- lines: 37 40 44
+                changed the profile picture url -- line : 31
+
+                "
+
+2: in index.html "
+
+                added a div.container to wrap the user UI -- line:25 to 43
+                changed the color of alert to more suitable one -- line:  29
+                changed the input type of the email from text to email: -- line: 34
+
+                added bootstrap classes to lines: 40 & 46 to 65
+
+                "
