@@ -22,11 +22,15 @@
 
 <body>
 
-    <div class="container-fluid" ng-controller="loginCtrl">
+    <div class="container-fluid " style="margin-top:5%" ng-controller="loginCtrl">
         <div class="container">
             <!-- added a title -->
-            <h1>Welcome To AppName</h1>
+           
             <div class="panel panel-default" ng-hide="user">
+                <!-- added a background -->
+            <img src="http://www.gandhinagarportal.com/wp-content/uploads/2013/01/green-city-gandhinagar-portal-bg-11-1.jpg"style="position: fixed;z-index:-999; top:0; left:0">
+
+                    <h1>Welcome To AppName</h1>
                 <div class="panel-heading">Login</div>
                 <div class="panel-body">
                     <div ng-show="errorMessage" class="alert alert-danger">
@@ -40,16 +44,19 @@
                         <label for="password">Password</label>
                         <input type="password" class="form-control" id="password" ng-model="password" placeholder="Password">
                     </div>
+                    <a href="">Forgot your username/password? </a><br>
                     <button type="submit" class="btn btn-success" ng-click="login()">Login</button>
                 </div>
             </div>
         </div>
-        <div class="container" ng-show="user">
+        <div class="container" style="margin-top:1%" ng-show="user">
+         <img src="http://www.svsair.com/wp-content/uploads/2016/10/mother-bg.png"style="height:150%; position: fixed;z-index:-999; top:0; left:0">
+
             <!-- More Tidy UI-->
-            <div class="row">
+            <div class="row ">
                 <div class="col-sm-12"><img class="img-thumbnail img-responsive" width="20%" src="{{user.profilePic}}"></div>
                 <div class="col-sm-3 center">
-                    <h2>Welcome<br>{{user.name}}</h2>
+                    <h2 class="text-light">Welcome<br>{{user.name}}</h2>
                 </div>
                 <div class="col-sm-2">
                     <button class="btn btn-primary" ng-hide="newPasswordMode">Change
